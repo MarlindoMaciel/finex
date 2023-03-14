@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\api\PagamentosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/pagamentos', [PagamentosController::class, 'store'])->name('pagamentos');
+Route::get('/pagamento', [PagamentosController::class, 'store'])->name('pagamento');
+Route::get('/consultas', [PagamentosController::class, 'index'])->name('consultas');
+
+
+
