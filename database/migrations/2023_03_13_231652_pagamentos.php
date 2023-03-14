@@ -13,9 +13,9 @@ return new class extends Migration
             $table->string('nome_cartao',255);
             $table->string('numero_cartao',16);
             $table->integer('valor_pagamento')->default(0);
-            $table->string('data_expiracao',7);
-            $table->string('codigo_cvv',3);
-            $table->string('status',30)->default('CRIADO');
+            $table->string('validade',7);
+            $table->string('cvv',3);
+            $table->string('status',30)->default('CADASTRADO');
             $table->timestamps();
         });
     }
