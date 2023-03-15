@@ -22,6 +22,7 @@ Route::post('/login', function(Request $request){
         return response()->json('Acesso não autorizado','401');
     }
     $user = Auth::user();
+    $user->tokens()->delete();
     $token = $user->createToken('token');
     return response()->json($token->plainTextToken);
 });
@@ -32,6 +33,7 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::get('/pagamentos/{id}',          [PagamentosController::class, 'index']);
     Route::get('/delete/pagamentos/{id}',   [PagamentosController::class, 'cancel']);
     Route::patch('/pagamentos/{id}',        [PagamentosController::class, 'confirm']);
+    Route::get('/list/pagamentos',          [PagamentosController::class, 'list']);
 
 });
 

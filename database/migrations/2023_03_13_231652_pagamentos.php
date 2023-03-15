@@ -9,7 +9,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pagamentos', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
             $table->string('nome_cartao',255);
             $table->string('numero_cartao',16);
             $table->integer('valor_pagamento')->default(0);

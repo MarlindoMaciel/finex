@@ -9,7 +9,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('notafiscal', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
             $table->string('nome',255);
             $table->string('email',255);
             $table->integer('cpf');
